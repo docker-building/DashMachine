@@ -35,3 +35,9 @@ jobs:
           platforms: linux/amd64,linux/arm64
           push: true
           tags: ghcr.io/docker-building/dashmachine:latest
+      -
+        name: Remove package versions
+        uses: navikt/remove-package-versions@v0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          keep_versions: 4
